@@ -2,19 +2,22 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { View,Text,SafeAreaView } from 'react-native'
 import screenStyle from '../../utils/styles/screenContainer'
+import textStyle from '../../utils/styles/textStyle'
 import PropTypes from 'prop-types'
 
-const Main = Props =>{
+const Main = props =>{
+    const {theme} = props;
+    console.log(theme);
     return(
-        <View style={screenStyle.container}> 
+        <View style={screenStyle({theme}).container}> 
             <SafeAreaView />
-            <Text>text</Text>
+            <Text style={textStyle({theme}).header}>text</Text>
         </View>
     )
 }
 
 const mapStateToProps = (state:any) =>({
-    
+    theme:state.main.theme
 })
 
 const mapDispatchToProps = (dispatch:any) =>({

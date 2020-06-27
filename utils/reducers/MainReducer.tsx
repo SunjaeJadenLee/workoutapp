@@ -1,8 +1,8 @@
-const innitialState = {
-    text:String
+const initialState = {
+    theme:'light'
 }
 
-const reducer = (state:any,action) =>{
+const reducer = (state:any=initialState,action) =>{
     switch(action.type){
         default:
             return {...state}
