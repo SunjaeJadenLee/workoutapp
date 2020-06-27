@@ -17,8 +17,10 @@ import {
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Provider } from 'react-redux'
 
 import Main from './src/screens/Main'
+import Store from './utils/store/Store';
 
 
 const App: () => React$Node = () => {
@@ -26,11 +28,14 @@ const App: () => React$Node = () => {
   const MainStack = createStackNavigator()
 
   return (
-    <NavigationContainer>
-      <MainStack.Navigator>
-        <MainStack.Screen options={{headerShown:false}} name='Main' component={Main} />
-      </MainStack.Navigator>
-    </NavigationContainer>
+    <Provider store={Store}>
+      <NavigationContainer>
+        <MainStack.Navigator>
+          <MainStack.Screen options={{ headerShown: false }} name='Main' component={Main} />
+        </MainStack.Navigator>
+      </NavigationContainer>
+    </Provider>
+
   );
 }; 
 
