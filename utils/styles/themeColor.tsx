@@ -1,6 +1,7 @@
 const colors = {
     background: 'rgb(235,235,235)',
-    font: 'rgb(0,0,0)'
+    font: 'rgb(0,0,0)',
+    theme:'#ff0061'
 }
 
 const darkColor = {

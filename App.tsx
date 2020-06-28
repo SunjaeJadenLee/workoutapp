@@ -8,12 +8,7 @@
 
 import React from 'react';
 import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
+  SafeAreaView, 
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -28,7 +23,7 @@ const App: () => React$Node = () => {
   const MainStack = createStackNavigator()
 
   return (
-    <Provider store={Store}>
+    <Provider store={Store}> 
       <NavigationContainer>
         <MainStack.Navigator>
           <MainStack.Screen options={{ headerShown: false }} name='Main' component={Main} />

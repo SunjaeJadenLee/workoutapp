@@ -6,7 +6,8 @@ import theme, {colors, darkColor} from './themeColor'
 
 const style = props => StyleSheet.create({
     header:{  
-        color: props.theme == 'dark'? darkColor.font :colors.font,
+        // color: props.theme == 'dark'? darkColor.font :colors.font,
+        color: colors.theme,
         fontSize:24,
         fontWeight:'bold'
     }

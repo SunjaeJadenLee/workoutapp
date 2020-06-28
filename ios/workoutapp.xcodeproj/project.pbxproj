@@ -18,6 +18,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* workoutappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* workoutappTests.m */; };
 		35BD3372B3C101E9939C9ECC /* libPods-workoutapp-workoutappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F959AA75BD4127A4DB37818 /* libPods-workoutapp-workoutappTests.a */; };
 		790431397C82E29F3443A714 /* libPods-workoutapp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F501B942FA3100528ADAB0F9 /* libPods-workoutapp-tvOSTests.a */; };
+		CE06548924A85A890061F11C /* splash3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE06548824A85A890061F11C /* splash3.jpg */; };
 		D24BE8B8AC913E240B4A9C67 /* libPods-workoutapp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7A74967E13001E89A0185B /* libPods-workoutapp-tvOS.a */; };
 		E996930DBD83B402CF4A8DF0 /* libPods-workoutapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4874DD6CA2A1A25092611B /* libPods-workoutapp.a */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		762EB3002D6EB49960E11B88 /* Pods-workoutapp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-workoutapp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-workoutapp-tvOSTests/Pods-workoutapp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		8DA8DBAEF251A1A17A738533 /* Pods-workoutapp-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-workoutapp-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-workoutapp-tvOSTests/Pods-workoutapp-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F7A74967E13001E89A0185B /* libPods-workoutapp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-workoutapp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE06548824A85A890061F11C /* splash3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = splash3.jpg; path = ../splash3.jpg; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F501B942FA3100528ADAB0F9 /* libPods-workoutapp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-workoutapp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 		13B07FAE1A68108700A75B9A /* workoutapp */ = {
 			isa = PBXGroup;
 			children = (
+				CE06548824A85A890061F11C /* splash3.jpg */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -161,7 +164,6 @@
 				752B674217D7CA64FAA59754 /* Pods-workoutapp-workoutappTests.debug.xcconfig */,
 				3E375A1D7C8ECABA09CDE2AA /* Pods-workoutapp-workoutappTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -338,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE06548924A85A890061F11C /* splash3.jpg in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
