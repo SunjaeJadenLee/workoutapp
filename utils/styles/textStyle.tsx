@@ -10,6 +10,11 @@ const style = props => StyleSheet.create({
         color: colors.theme,
         fontSize:24,
         fontWeight:'bold'
+    },
+    subHeader:{
+        color: colors.theme,
+        fontSize:20,
+        fontWeight:'bold'
     }
 })
 

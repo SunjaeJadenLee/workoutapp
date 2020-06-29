@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { View, Text, SafeAreaView,StyleSheet,Dimensions,MaskedViewComponent } from 'react-native'
+import { View, FlatList,Dimensions,StyleSheet,Text,Image } from 'react-native'
 import screenStyle from '../../utils/styles/screenContainer'
 import textStyle from '../../utils/styles/textStyle'
 import {colors,darkColor} from '../../utils/styles/themeColor'
@@ -11,18 +11,27 @@ import PropTypes from 'prop-types'
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
+const EXDATA = [1,2,3,4,5,6,7,8,9]
 
 const Main = props => {
     const { theme } = props;
+
+    const renderItem = ({item,index}) =>{
+        return(<View style={style(theme).item}>
+            <View style={{height:height/18}}>
+                <Text style={{fontSize:16,padding:5,fontWeight:'bold'}}>Barbbell Bench Press</Text>
+            </View>
+            <Image style={{width:width/3,height:height/9}} source={require('../../resources/images/barbbell_bench_press.jpg')}/>
+        </View>)
+    }
     return (
         <View style={style(theme).container}>
-            <View style={style(theme).icons}>
-                <FontAwesomeIcon size={height/36} style={style(theme).icon} icon={faBars} />
-                <FontAwesomeIcon size={height/36} style={style(theme).icon} icon={faCog} />
-            </View>
-            <View style={{height: height /18 }}>
-                <Text style={{ ...textStyle({ theme }).header, lineHeight: height / 18, }}>Header</Text>
-            </View>
+            <FlatList 
+            style={{backgroundColor:'#eee'}}
+            data={EXDATA}
+            renderItem={renderItem}
+            horizontal={true}
+            />
         </View>
     )
 }
@@ -30,17 +39,13 @@ const Main = props => {
 const style = (theme) => StyleSheet.create({
     container:{ 
         backgroundColor: theme == 'dark'? darkColor.background:colors.background,
-        height:height/12, 
-        
-    },
-    icons:{
-        width:'100%',
-        height:height/30,
-        flexDirection:'row',
-        justifyContent:'space-between', 
-    },
-    icon:{
-        color:theme == 'dark'? darkColor.font:colors.font
+        height:height/6,  
+    }, 
+    item: {
+        width:width/3,
+        height:height/6, 
+        // backgroundColor:'#ccc',
+        marginLeft:10
     }
 })
 
