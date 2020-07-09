@@ -7,6 +7,7 @@ import Header from '../components/ScreenHeader'
 import HorizontalList from '../components/HorizontalList'
 import PropTypes from 'prop-types'
 import Tabs from '../components/Tabs'
+import AddButton from '../components/AddButton'
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -18,6 +19,7 @@ const MyList = props => {
             <SafeAreaView /> 
             <Header title={'My List'} navigation={navigation}/>
             <Tabs />
+            <AddButton />
         </View>
     )
 }
