@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer'
 import { Provider } from 'react-redux'
 
 import Main from './src/screens/Main'
@@ -20,12 +21,13 @@ import Store from './utils/store/Store';
 
 const App: () => React$Node = () => {
 
-  const MainStack = createStackNavigator()
+  // const MainStack = createStackNavigator();
+  const MainStack = createDrawerNavigator();
 
   return (
     <Provider store={Store}> 
       <NavigationContainer>
-        <MainStack.Navigator>
+        <MainStack.Navigator initialRouteName={'Main'}>
           <MainStack.Screen options={{ headerShown: false }} name='Main' component={Main} />
         </MainStack.Navigator>
       </NavigationContainer>

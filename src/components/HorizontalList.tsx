@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import { connect } from 'react-redux'
 import { View, FlatList,Dimensions,StyleSheet,Text,Image } from 'react-native'
 import screenStyle from '../../utils/styles/screenContainer'
@@ -8,30 +8,34 @@ import {faBars,faCog} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome'
 import LinearGradient from 'react-native-linear-gradient' 
 import PropTypes from 'prop-types' 
-
+import SkeletonContent from 'react-native-skeleton-content-nonexpo'
+import RenderItem from './HorizontalListItem'
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
-const EXDATA = [1,2,3,4,5,6,7,8,9]
+const EXDATA = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 const Main = props => {
     const { theme } = props;
+    const [loading,setLoading] = useState<boolean>(false);
+    
+    useEffect(()=>{ 
 
-    const renderItem = ({item,index}) =>{
-        return(<View style={style(theme).item}>
-            <View style={{height:height/18}}>
-                <Text style={{fontSize:16,padding:5,fontWeight:'bold'}}>Barbbell Bench Press</Text>
-            </View>
-            <Image style={{width:width/3,height:height/9}} source={require('../../resources/images/barbbell_bench_press.jpg')}/>
-        </View>)
-    }
+        setLoading(true);
+
+        setTimeout(() => {
+            setLoading(false)
+        }, 3000);
+    },[])
+
     return (
         <View style={style(theme).container}>
-            <FlatList 
-            style={{backgroundColor:'#eee'}}
+            <FlatList
+                style={{ backgroundColor: '#eee' }}
             data={EXDATA}
-            renderItem={renderItem}
+            renderItem={props => <RenderItem {...props} loading={loading}/>}
             horizontal={true}
             />
+
         </View>
     )
 }

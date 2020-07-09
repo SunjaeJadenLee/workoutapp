@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { View, Text, SafeAreaView,StyleSheet,Dimensions,MaskedViewComponent } from 'react-native'
+import { View, Text, SafeAreaView,StyleSheet,Dimensions,MaskedViewComponent, TouchableWithoutFeedback } from 'react-native'
 import screenStyle from '../../utils/styles/screenContainer'
 import textStyle from '../../utils/styles/textStyle'
 import {colors,darkColor} from '../../utils/styles/themeColor'
@@ -13,11 +13,13 @@ const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
 
 const Main = props => {
-    const { theme } = props;
+    const { theme,navigation } = props;
     return (
         <View style={style(theme).container}>
             <View style={style(theme).icons}>
-                <FontAwesomeIcon size={height/36} style={style(theme).icon} icon={faBars} />
+                <TouchableWithoutFeedback onPress={()=>navigation.openDrawer()}>
+                    <FontAwesomeIcon size={height/36} style={style(theme).icon} icon={faBars} />
+                </TouchableWithoutFeedback>
                 <FontAwesomeIcon size={height/36} style={style(theme).icon} icon={faCog} />
             </View>
             <View style={{height: height /18 }}>
