@@ -16,8 +16,8 @@ const Tab = props => {
     const { theme,navigation,name,selected,setSelected,tabKey } = props;
     const [animatedVal,setAnimatedVal] = useState(new Animated.Value(0));
     const interporate = animatedVal.interpolate({
-        inputRange:[0,100],
-        outputRange:[0,60], 
+        inputRange:[-100,0,50,100],
+        outputRange:[-60,0,30,100], 
     })
     useEffect(() => {
         if (selected == tabKey) {
