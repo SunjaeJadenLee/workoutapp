@@ -6,22 +6,18 @@ import textStyle from '../../utils/styles/textStyle'
 import Header from '../components/ScreenHeader'
 import HorizontalList from '../components/HorizontalList'
 import PropTypes from 'prop-types'
+import Tabs from '../components/Tabs'
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
 
-const Main = props => {
+const MyList = props => {
     const { theme,navigation } = props; 
     return (
         <View style={screenStyle({ theme }).container}>
             <SafeAreaView /> 
-            <Header title={'Main'} navigation={navigation}/>
-            <View style={{marginVertical:40}}>
-                <View style={{width:'100%',justifyContent:'center',alignItems:'center'}}>
-                    <Image style={{width:width,height:height*0.38}} source={require('../../resources/images/body.png')}/>
-                </View>
-            </View>
-            <HorizontalList /> 
+            <Header title={'My List'} navigation={navigation}/>
+            <Tabs />
         </View>
     )
 }
@@ -34,4 +30,4 @@ const mapDispatchToProps = (dispatch: any) => ({
 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main) 
+export default connect(mapStateToProps, mapDispatchToProps)(MyList) 

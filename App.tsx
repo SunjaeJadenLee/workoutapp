@@ -16,6 +16,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer'
 import { Provider } from 'react-redux'
 
 import Main from './src/screens/Main'
+import MyList from './src/screens/MyList'
 import Store from './utils/store/Store';
 
 
@@ -29,6 +30,7 @@ const App: () => React$Node = () => {
       <NavigationContainer>
         <MainStack.Navigator initialRouteName={'Main'}>
           <MainStack.Screen options={{ headerShown: false }} name='Main' component={Main} />
+          <MainStack.Screen options={{ headerShown: false }} name='MyList' component={MyList} />
         </MainStack.Navigator>
       </NavigationContainer>
     </Provider>
