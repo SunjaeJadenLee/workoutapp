@@ -14,15 +14,16 @@ const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
 
 const Tabs = props => {
-    const { theme,navigation,title,selectedTab,setSelectedTab,fListRef } = props;
+    const { theme,navigation,title } = props;
+    const [selectedTab,setSelectedTab] = useState<number>(0);
 
     return (
         <View style={style(theme).container}>
-            <Tab key={0} tabKey={0} selected={selectedTab} setSelected={setSelectedTab} name={'cheast'} fListRef={fListRef}/>
-            <Tab key={1} tabKey={1} selected={selectedTab} setSelected={setSelectedTab} name={'back'} fListRef={fListRef}/>
-            <Tab key={2} tabKey={2} selected={selectedTab} setSelected={setSelectedTab} name={'shoulder'} fListRef={fListRef}/>
-            <Tab key={3} tabKey={3} selected={selectedTab} setSelected={setSelectedTab} name={'lower body'} fListRef={fListRef}/>
-            <Tab key={4} tabKey={4} selected={selectedTab} setSelected={setSelectedTab} name={'arms'} fListRef={fListRef}/>
+            <Tab key={0} tabKey={0} selected={selectedTab} setSelected={setSelectedTab} name={'cheast'}/>
+            <Tab key={1} tabKey={1} selected={selectedTab} setSelected={setSelectedTab} name={'back'}/>
+            <Tab key={2} tabKey={2} selected={selectedTab} setSelected={setSelectedTab} name={'shoulder'}/>
+            <Tab key={3} tabKey={3} selected={selectedTab} setSelected={setSelectedTab} name={'lower body'}/>
+            <Tab key={4} tabKey={4} selected={selectedTab} setSelected={setSelectedTab} name={'arms'}/>
         </View>
     )
 }
@@ -45,9 +46,7 @@ const mapDispatchToProps = (dispatch: any) => ({
 })
 
 Tabs.propTypes = {
-    title: PropTypes.string,
-    selectedTab: PropTypes.number,
-    setSelectedTab: PropTypes.func
+    title: PropTypes.string
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tabs) 

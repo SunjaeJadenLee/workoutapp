@@ -10,11 +10,6 @@ const style = props => StyleSheet.create({
         height:Dimensions.get('screen').height,
         backgroundColor: props.theme == 'dark'? darkColor.background :colors.background, 
         paddingHorizontal: 0.05 * vw
-    },
-    component:{
-        width:vw,
-        backgroundColor: props.theme == 'dark'? darkColor.background :colors.background, 
-        paddingHorizontal: 0.05 * vw
     }
 })
 

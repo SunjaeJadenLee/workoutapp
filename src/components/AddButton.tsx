@@ -33,7 +33,7 @@ const style = (theme) => StyleSheet.create({
         width:width/3,
         borderRadius:5,
         marginLeft:'auto',
-        marginRight:'auto', 
+        marginRight:'auto'
     },  
     text:{
         lineHeight:height/24,
