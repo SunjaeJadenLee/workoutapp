@@ -8,6 +8,7 @@ import {faBars,faCog} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome' 
 import LinearGradient from 'react-native-linear-gradient' 
 import PropTypes from 'prop-types' 
+import DraggerbleFlatList from 'react-native-draggable-flatlist'
 import ExListItem from './ExListItem'
 
 const width = Dimensions.get('screen').width;
@@ -19,10 +20,16 @@ const ExList = props => {
 
     return (
              <View style={style(theme).container}>
-                 <FlatList 
+                 {/* <FlatList 
                  style={{flexGrow:0}} 
                  data={[1,2,3,4,5,6]}
                  renderItem={(props)=><ExListItem {...props}/>}
+                 /> */}
+                 <DraggerbleFlatList 
+                 style={{flexGrow:0}} 
+                 data={[{key:1},{key:2},{key:3},{key:4},{key:5},{key:6},]}
+                 renderItem={(props)=><ExListItem {...props}/>}
+                 keyExtractor={(item, index) => `draggable-item-${item.key}`}
                  />
             </View>  
     )
@@ -33,7 +40,10 @@ const style = (theme) => StyleSheet.create({
         backgroundColor: theme == 'dark'? darkColor.background:colors.background,
         // marginHorizontal:5, 
         // width:width,
-        alignItems:'center'
+        display:'flex',
+        flex:1,
+        alignItems:'center',
+        height:height
     },  
 })
 
