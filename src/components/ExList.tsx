@@ -26,8 +26,9 @@ const ExList = props => {
                  renderItem={(props)=><ExListItem {...props}/>}
                  /> */}
                  <DraggerbleFlatList 
+                 activationDistance={5}
                  style={{flexGrow:0}} 
-                 data={[{key:1},{key:2},{key:3},{key:4},{key:5},{key:6},]}
+                 data={[{key:1},{key:2},{key:3},{key:4},{key:5},{key:6}]}
                  renderItem={(props)=><ExListItem {...props}/>}
                  keyExtractor={(item, index) => `draggable-item-${item.key}`}
                  />
@@ -39,11 +40,10 @@ const style = (theme) => StyleSheet.create({
     container:{ 
         backgroundColor: theme == 'dark'? darkColor.background:colors.background,
         // marginHorizontal:5, 
-        // width:width,
-        display:'flex',
-        flex:1,
+        // width:width, 
         alignItems:'center',
-        height:height
+        height:height,
+        width:width-(0.1*width)
     },  
 })
 
