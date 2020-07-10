@@ -13,7 +13,7 @@ const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
 
 const Tab = props => {
-    const { theme,navigation,name,selected,setSelected,tabKey } = props;
+    const { theme,navigation,name,selected,setSelected,tabKey,fListRef } = props;
     const [animatedVal,setAnimatedVal] = useState(new Animated.Value(0));
     const interporate = animatedVal.interpolate({
         inputRange:[-100,0,50,100],
@@ -36,7 +36,11 @@ const Tab = props => {
     }, [selected])
 
     return (
-        <TouchableOpacity onPress={()=>{setSelected(tabKey)}}>
+        <TouchableOpacity onPress={()=>{
+            setSelected(tabKey);
+            fListRef.current.scrollToIndex({index:tabKey,animated:true})
+            console.log(tabKey)
+            }}>
             <View style={style(theme).container}>
                 <Text style={{ ...style(theme).text, color: tabKey === selected ? 'rgb(0,0,0)' : 'rgb(190,190,190)' }}>{name}</Text>
                 <Animated.View style={{backgroundColor:colors.theme,height:5,width:interporate}}/>
