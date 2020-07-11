@@ -15,26 +15,24 @@
         "all":["바벨로우","데드리프트","원암덤벨시티드로우","풀업","머신시티드로우","렛풀다운"]
     },
     "2":{
-        "barbbell":[],
-        "dumbbell":[],
-        "Calisthenics":[],
-        "machine":[],
-        "all":[],
-        "anterior":{
-
-        },
-        "lateral":{
-
-        },
-        "posterior":{
-            
-        }
+        "barbbell":[""],
+        "dumbbell":[""],
+        "Calisthenics":[""],
+        "machine":[""],
+        "all":[""]
     },
     "3":{
-        "barbbell":[],
-        "dumbbell":[],
-        "Calisthenics":[],
-        "machine":[],
-        "all":[]
+        "barbbell":[""],
+        "dumbbell":[""],
+        "Calisthenics":[""],
+        "machine":[""],
+        "all":[""]
+    },
+    "4":{
+        "barbbell":[""],
+        "dumbbell":[""],
+        "Calisthenics":[""],
+        "machine":[""],
+        "all":[""]
     }
 }
