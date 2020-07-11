@@ -1,19 +1,25 @@
 {
     "cheast":{
-        "barbbell":[],
-        "dumbbell":[],
-        "Calisthenics":[]
+        "barbbell":["벤치프레스","인클라인벤치프레스","디클라인벤치프레스"],
+        "dumbbell":["바벨프레스","인클라인바벨프레스","디클라인바벨프레스"],
+        "Calisthenics":["푸쉬업"],
+        "machine":["머신플라이","케이블크로스오버"],
+        "all":["벤치프레스","인클라인벤치프레스","디클라인벤치프레스","바벨프레스","인클라인바벨프레스","디클라인바벨프레스","푸쉬업","머신플라이","케이블크로스오버"]
 
     },
     "back":{
-        "barbbell":[],
-        "dumbbell":[],
-        "Calisthenics":[]
+        "barbbell":["바벨로우","데드리프트"],
+        "dumbbell":["원암덤벨시티드로우"],
+        "Calisthenics":["풀업"],
+        "machine":["머신시티드로우","렛풀다운"],
+        "all":["바벨로우","데드리프트","원암덤벨시티드로우","풀업","머신시티드로우","렛풀다운"]
     },
     "shoulder":{
         "barbbell":[],
         "dumbbell":[],
         "Calisthenics":[],
+        "machine":[],
+        "all":[],
         "anterior":{
 
         },
@@ -27,6 +33,8 @@
     "low_body":{
         "barbbell":[],
         "dumbbell":[],
-        "Calisthenics":[]
+        "Calisthenics":[],
+        "machine":[],
+        "all":[]
     }
 }
