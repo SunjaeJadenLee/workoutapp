@@ -15,11 +15,11 @@ const EXDATA = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 const theme = 'light';
 
 const renderItem = (props) => {
-    const {theme,loading,navigation,route} = props;
+    const {theme,loading,navigation,route,item} = props;
 
 
     return (
-        <TouchableWithoutFeedback onPress={()=>navigation.jumpTo('Detail',{title:'Barbbell Bench Press'})}>
+        <TouchableWithoutFeedback onPress={()=>navigation.jumpTo('Detail',{title:item})}>
             <View style={style(theme).item}>
                 {loading ? <SkeletonContent
                     containerStyle={{ width: width / 3, height: height / 3 }}
@@ -29,10 +29,12 @@ const renderItem = (props) => {
                         { key: 'image', width: width / 3, height: height / 9 },
                     ]}
                 /> :
-                    <><View style={{ height: height / 18 }}>
-                        <Text style={{ fontSize: 16, padding: 5, fontWeight: 'bold' }}>Barbbell Bench Press</Text>
-                    </View>
-                        <Image style={{ width: width / 3, height: height / 9 }} source={require('../../../resources/images/barbbell_bench_press.jpg')} /></>
+                    <>
+                        <Image style={{ width: width / 3, height: height / 9,marginBottom:20 }} source={require('../../../resources/images/barbbell_bench_press.jpg')} />
+                        <View style={{ height: height / 18, width: width / 3 }}>
+                            <Text numberOfLines={2} style={{ fontSize: 16, fontWeight: 'bold', width: width / 3, textAlign: 'center' }}>{item}</Text>
+                        </View>
+                    </>
                 }
             </View>
         </TouchableWithoutFeedback>)

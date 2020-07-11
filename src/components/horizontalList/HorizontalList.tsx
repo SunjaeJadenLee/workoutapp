@@ -10,12 +10,14 @@ import LinearGradient from 'react-native-linear-gradient'
 import PropTypes from 'prop-types' 
 import SkeletonContent from 'react-native-skeleton-content-nonexpo'
 import RenderItem from './HorizontalListItem'
+import ExData from '../../../utils/workoutData.json'
+
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
 const EXDATA = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 const Main = props => {
-    const { theme,navigation,route } = props;
+    const { theme,navigation,route,selectedPart } = props;
     const [loading,setLoading] = useState<boolean>(false);
     
     useEffect(()=>{   
@@ -24,13 +26,14 @@ const Main = props => {
         setTimeout(() => {
             setLoading(false)
         }, 3000);
+ 
     },[])
 
     return (
         <View style={style(theme).container}>
             <FlatList
                 style={{ backgroundColor: '#eee' }}
-            data={EXDATA}
+            data={ExData[selectedPart].all}
             renderItem={props => <RenderItem {...props} route={route} navigation={navigation} loading={loading}/>}
             horizontal={true}
             />

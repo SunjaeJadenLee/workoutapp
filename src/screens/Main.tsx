@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { connect } from 'react-redux'
 import { View, Text, SafeAreaView,Dimensions,Image } from 'react-native'
 import screenStyle from '../../utils/styles/screenContainer'
@@ -12,6 +12,7 @@ const height = Dimensions.get('screen').height;
 
 const Main = props => {
     const { theme,navigation,route } = props; 
+    const [selectedPart,setSelectedPart] = useState(0);
     return (
         <View style={screenStyle({ theme }).container}>
             <SafeAreaView /> 
@@ -21,7 +22,7 @@ const Main = props => {
                     <Image style={{width:width,height:height*0.38}} source={require('../../resources/images/body.png')}/>
                 </View>
             </View>
-            <HorizontalList route={route} navigation={navigation}/> 
+            <HorizontalList route={route} selectedPart={selectedPart} navigation={navigation}/> 
         </View>
     )
 }
