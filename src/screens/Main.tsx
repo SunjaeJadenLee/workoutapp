@@ -11,7 +11,7 @@ const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
 
 const Main = props => {
-    const { theme,navigation } = props; 
+    const { theme,navigation,route } = props; 
     return (
         <View style={screenStyle({ theme }).container}>
             <SafeAreaView /> 
@@ -21,7 +21,7 @@ const Main = props => {
                     <Image style={{width:width,height:height*0.38}} source={require('../../resources/images/body.png')}/>
                 </View>
             </View>
-            <HorizontalList /> 
+            <HorizontalList route={route} navigation={navigation}/> 
         </View>
     )
 }

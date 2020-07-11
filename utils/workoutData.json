@@ -1,9 +1,19 @@
 {
     "cheast":{
-        
+        "barbbell":[],
+        "dumbbell":[],
+        "Calisthenics":[]
+
     },
-    "back":{},
+    "back":{
+        "barbbell":[],
+        "dumbbell":[],
+        "Calisthenics":[]
+    },
     "shoulder":{
+        "barbbell":[],
+        "dumbbell":[],
+        "Calisthenics":[],
         "anterior":{
 
         },
@@ -14,5 +24,9 @@
             
         }
     },
-    "low_body":{}
+    "low_body":{
+        "barbbell":[],
+        "dumbbell":[],
+        "Calisthenics":[]
+    }
 }

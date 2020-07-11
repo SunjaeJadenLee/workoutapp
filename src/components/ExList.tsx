@@ -19,15 +19,11 @@ const ExList = props => {
   
 
     return (
-             <View style={style(theme).container}>
-                 {/* <FlatList 
-                 style={{flexGrow:0}} 
-                 data={[1,2,3,4,5,6]}
-                 renderItem={(props)=><ExListItem {...props}/>}
-                 /> */}
+             <View style={style(theme).container}> 
                  <DraggerbleFlatList 
                  activationDistance={5}
-                 style={{flexGrow:0}} 
+                 showsVerticalScrollIndicator={false}
+                 style={{flexGrow:0}}  
                  data={[{key:1},{key:2},{key:3},{key:4},{key:5},{key:6}]}
                  renderItem={(props)=><ExListItem {...props}/>}
                  keyExtractor={(item, index) => `draggable-item-${item.key}`}
@@ -38,11 +34,12 @@ const ExList = props => {
 
 const style = (theme) => StyleSheet.create({
     container:{ 
-        backgroundColor: theme == 'dark'? darkColor.background:colors.background,
+        backgroundColor: theme == 'dark'? darkColor.background:colors.background, 
         // marginHorizontal:5, 
         // width:width, 
-        alignItems:'center',
-        height:height,
+        alignItems:'center', 
+        height:height/3,  
+        overflow:'scroll',
         width:width-(0.1*width)
     },  
 })

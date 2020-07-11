@@ -9,6 +9,7 @@ import PropTypes from 'prop-types'
 import Tabs from '../components/Tabs'
 import AddButton from '../components/AddButton'
 import ExList from '../components/ExList'
+import RBSheet from 'react-native-raw-bottom-sheet'
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -19,9 +20,10 @@ const MyList = props => {
     const { theme,navigation } = props; 
     const [selectedTab,setSelectedTab] = useState<number>(0);
     const lists = useRef();
+    const rbsheet = useRef();
     const onScrollBegin = (e) =>{
         
-        let index = parseInt(e.nativeEvent.contentOffset.x / parseInt(e.nativeEvent.layoutMeasurement.width));
+        let index: number = parseInt(e.nativeEvent.contentOffset.x / parseInt(e.nativeEvent.layoutMeasurement.width));
          setSelectedTab(index); 
     }
 
@@ -39,7 +41,17 @@ const MyList = props => {
             renderItem={props=><ExList />}
             onMomentumScrollEnd={(e)=>onScrollBegin(e)}
             />
-            <AddButton />
+            <AddButton rbsheet={rbsheet}/>
+            <RBSheet 
+            ref={rbsheet} 
+            height={height/2}
+            openDuration={300}
+            closeOnDragDown={true}
+            closeDuration={300}  
+            >
+                <View style={{width:'100%',height:300,flex:1}}> 
+                </View>
+            </RBSheet>
         </View>
     )
 }

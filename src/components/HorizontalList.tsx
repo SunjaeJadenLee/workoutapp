@@ -15,11 +15,10 @@ const height = Dimensions.get('screen').height;
 const EXDATA = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 const Main = props => {
-    const { theme } = props;
+    const { theme,navigation,route } = props;
     const [loading,setLoading] = useState<boolean>(false);
     
-    useEffect(()=>{ 
-
+    useEffect(()=>{   
         setLoading(true);
 
         setTimeout(() => {
@@ -32,7 +31,7 @@ const Main = props => {
             <FlatList
                 style={{ backgroundColor: '#eee' }}
             data={EXDATA}
-            renderItem={props => <RenderItem {...props} loading={loading}/>}
+            renderItem={props => <RenderItem {...props} route={route} navigation={navigation} loading={loading}/>}
             horizontal={true}
             />
 

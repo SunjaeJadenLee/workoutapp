@@ -13,12 +13,12 @@ const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
 
 const AddButton = props => {
-    const { theme,navigation,name,selected,setSelected,tabKey } = props;
+    const { theme,navigation,name,selected,setSelected,tabKey,rbsheet } = props;
     const [animatedVal,setAnimatedVal] = useState(new Animated.Value(0));
      
 
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>rbsheet.current.open()}>
             <LinearGradient start={{x:0,y:0}} end={{x:1,y:0}} colors={['#FF76AA',colors.theme]} style={style(theme).container}>
                 <Text style={style(theme).text}>add your exercise</Text>
             </LinearGradient> 
