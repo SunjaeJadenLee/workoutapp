@@ -14,7 +14,6 @@ const height = Dimensions.get('screen').height;
 
 const ExListItem = (props) => {
     const { theme, navigation, item, index, drag, isActive } = props;
-    console.log(item);
     return (
         <View style={{...style(theme).container,opacity:isActive?0.4:1}}>
             <Text style={style(theme).text}>Bench Barbbell Press</Text>

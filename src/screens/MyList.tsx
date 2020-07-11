@@ -1,4 +1,4 @@
-import React, {useState,useRef} from 'react'
+import React, {useState,useRef, useEffect} from 'react'
 import { connect } from 'react-redux'
 import { View, Text, SafeAreaView,Dimensions,Image, FlatList } from 'react-native'
 import screenStyle from '../../utils/styles/screenContainer'
@@ -10,6 +10,8 @@ import Tabs from '../components/Tabs'
 import AddButton from '../components/AddButton'
 import ExList from '../components/ExList'
 import RBSheet from 'react-native-raw-bottom-sheet'
+import ExData from '../../utils/workoutData.json'
+import VerticalBottomList from '../components/VerticalBottomList'
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -19,19 +21,32 @@ const mocklists = [1,2,3,4,5]
 const MyList = props => {
     const { theme,navigation } = props; 
     const [selectedTab,setSelectedTab] = useState<number>(0);
+    const [currentBottomList,setCurrentBottomList] = useState(ExData[0]);
     const lists = useRef();
     const rbsheet = useRef();
+
+    // useEffect(()=>{
+    //     console.log(currentBottomList);
+    // },[currentBottomList])
+
+    
+    //Swipe flatlist
     const onScrollBegin = (e) =>{
         
         let index: number = parseInt(e.nativeEvent.contentOffset.x / parseInt(e.nativeEvent.layoutMeasurement.width));
          setSelectedTab(index); 
+         setCurrentBottomList(ExData[index]);
     }
 
     return (
         <View style={screenStyle({ theme }).container}>
             <SafeAreaView /> 
             <Header title={'My List'} navigation={navigation}/>
-            <Tabs selectedTab={selectedTab} setSelectedTab={setSelectedTab} fListRef={lists}/>
+            <Tabs
+                selectedTab={selectedTab}
+                setSelectedTab={setSelectedTab}
+                fListRef={lists}
+            />
             <FlatList  
             style={{flexGrow:0}} 
             ref={lists}
@@ -43,14 +58,15 @@ const MyList = props => {
             />
             <AddButton rbsheet={rbsheet}/>
             <RBSheet 
+            dragFromTopOnly
             ref={rbsheet} 
+            customStyles={{container:{backgroundColor:'rgb(235,235,235)'}}}
             height={height/2}
             openDuration={300}
             closeOnDragDown={true}
             closeDuration={300}  
             >
-                <View style={{width:'100%',height:300,flex:1}}> 
-                </View>
+                <VerticalBottomList currentBottomList={currentBottomList}/>
             </RBSheet>
         </View>
     )
