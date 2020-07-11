@@ -22,7 +22,7 @@ const Main = props => {
                         <FontAwesomeIcon size={height / 36} style={style(theme).icon} icon={faBars} />
                     </View>
                 </TouchableWithoutFeedback>
-                <TouchableWithoutFeedback onPress={() => {}}>
+                <TouchableWithoutFeedback onPress={() => navigation.jumpTo('Setting')}>
                     <View>
                         <FontAwesomeIcon size={height / 36} style={style(theme).icon} icon={faCog} />
                     </View>

@@ -4,14 +4,14 @@ import { View, Text, SafeAreaView,Dimensions,Image, FlatList } from 'react-nativ
 import screenStyle from '../../utils/styles/screenContainer'
 import textStyle from '../../utils/styles/textStyle'
 import Header from '../components/ScreenHeader'
-import HorizontalList from '../components/HorizontalList'
+import HorizontalList from '../components/horizontalList/HorizontalList'
 import PropTypes from 'prop-types'
-import Tabs from '../components/Tabs'
+import Tabs from '../components/tab/Tabs'
 import AddButton from '../components/AddButton'
-import ExList from '../components/ExList'
+import ExList from '../components/exList/ExList'
 import RBSheet from 'react-native-raw-bottom-sheet'
 import ExData from '../../utils/workoutData.json'
-import VerticalBottomList from '../components/VerticalBottomList'
+import VerticalBottomList from '../components/verticalList/VerticalBottomList'
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;

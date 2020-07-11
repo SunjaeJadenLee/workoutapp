@@ -19,6 +19,7 @@ import Main from './src/screens/Main'
 import MyList from './src/screens/MyList'
 import Store from './utils/store/Store';
 import ExDetail from './src/screens/ExDetail';
+import Setting from './src/screens/Setting';
 
 
 const App: () => React$Node = () => {
@@ -33,6 +34,7 @@ const App: () => React$Node = () => {
         <MainStack.Navigator initialRouteName={'Main'}>
           <MainStack.Screen options={{ headerShown: false }} name='Main' component={Main} />
           <MainStack.Screen options={{ headerShown: false }} name='MyList' component={MyList} />
+          <MainStack.Screen options={{ headerShown: false,drawerLabel:()=>null}} name='Setting' component={Setting} />
           <MainStack.Screen options={{ headerShown: false,drawerLabel:()=>null }} name='Detail' component={ExDetail} />
         </MainStack.Navigator>
       </NavigationContainer>

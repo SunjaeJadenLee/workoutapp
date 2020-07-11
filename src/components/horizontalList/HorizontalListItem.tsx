@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { View, FlatList, Dimensions, StyleSheet, Text, Image } from 'react-native'
-import screenStyle from '../../utils/styles/screenContainer'
-import textStyle from '../../utils/styles/textStyle'
-import { colors, darkColor } from '../../utils/styles/themeColor'
+import screenStyle from '../../../utils/styles/screenContainer'
+import textStyle from '../../../utils/styles/textStyle'
+import { colors, darkColor } from '../../../utils/styles/themeColor'
 import LinearGradient from 'react-native-linear-gradient'
 import PropTypes from 'prop-types'
 import SkeletonContent from 'react-native-skeleton-content-nonexpo'
@@ -32,7 +32,7 @@ const renderItem = (props) => {
                     <><View style={{ height: height / 18 }}>
                         <Text style={{ fontSize: 16, padding: 5, fontWeight: 'bold' }}>Barbbell Bench Press</Text>
                     </View>
-                        <Image style={{ width: width / 3, height: height / 9 }} source={require('../../resources/images/barbbell_bench_press.jpg')} /></>
+                        <Image style={{ width: width / 3, height: height / 9 }} source={require('../../../resources/images/barbbell_bench_press.jpg')} /></>
                 }
             </View>
         </TouchableWithoutFeedback>)
