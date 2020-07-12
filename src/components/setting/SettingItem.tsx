@@ -8,6 +8,7 @@ import {faAngleRight} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome' 
 import LinearGradient from 'react-native-linear-gradient' 
 import PropTypes from 'prop-types' 
+import ToggleButton from './ToggleButton'
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -15,12 +16,24 @@ const height = Dimensions.get('screen').height;
 const Tab = props => {
     const { theme,navigation,text } = props;
     
+    const displayItem = (text) =>{
+        switch(text){
+            case '다크모드':
+                return(<ToggleButton />)
+            case '버전정보':
+                return(<Text style={{fontSize:14,fontWeight:'bold'}}>v1.0.1</Text>)
+            default:
+                return(<View>
+                    <FontAwesomeIcon icon={faAngleRight}/>
+                </View>)
+
+        }
+    }
+
     return ( 
             <View style={style(theme).container}>
                 <Text style={style(theme).text}>{text}</Text>
-                {text=='다크모드'?<></>:<View>
-                    <FontAwesomeIcon icon={faAngleRight}/>
-                </View>}
+                {displayItem(text)}
             </View>  
     )
 }
