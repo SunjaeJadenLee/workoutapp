@@ -18,7 +18,8 @@ const Main = props => {
     return (
         <View style={style(theme).container}>
             <FlatList   
-                showsVerticalScrollIndicator={false}
+                showsVerticalScrollIndicator={false}  
+                contentInsetAdjustmentBehavior={'automatic'}
                 data={Object.keys(currentBottomList).slice(0,Object.keys(currentBottomList).length-1)}
                 renderItem={(props)=><VerticalBottomListItem sublist={Object.values(currentBottomList)[props.index]} {...props}/>}
             />
