@@ -16,7 +16,7 @@ const ExListItem = (props) => {
     const { theme, navigation, item, index, drag, isActive } = props;
     return (
         <View style={{...style(theme).container,opacity:isActive?0.4:1}}>
-            <Text style={style(theme).text}>Bench Barbbell Press</Text>
+            <Text style={style(theme).text}>{item}</Text>
             <TouchableWithoutFeedback style={{height:height/1}} onLongPress={drag}>
                 <View>
                     <FontAwesomeIcon icon={faEquals} />

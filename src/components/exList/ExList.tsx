@@ -15,7 +15,7 @@ const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
 
 const ExList = props => {
-    const { theme,navigation,name,selected,setSelected,tabKey } = props;
+    const { theme,navigation,name,selected,setSelected,tabKey,data } = props;
   
 
     return (
@@ -24,7 +24,7 @@ const ExList = props => {
                  activationDistance={5}
                  showsVerticalScrollIndicator={false}
                  style={{flexGrow:0}}  
-                 data={[{key:1},{key:2},{key:3},{key:4},{key:5},{key:6}]}
+                 data={data}
                  renderItem={(props)=><ExListItem {...props}/>}
                  keyExtractor={(item, index) => `draggable-item-${item.key}`}
                  />

@@ -34,7 +34,7 @@ const Main = props => {
             <FlatList
                 style={{ backgroundColor: '#eee' }}
             data={ExData[selectedPart].all}
-            renderItem={props => <RenderItem {...props} route={route} navigation={navigation} loading={loading}/>}
+            renderItem={props => <RenderItem {...props} imageUrl={ExData[selectedPart].image_urls[props.index]} route={route} navigation={navigation} loading={loading}/>}
             horizontal={true}
             />
 

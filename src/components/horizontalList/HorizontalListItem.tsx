@@ -15,9 +15,9 @@ const EXDATA = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 const theme = 'light';
 
 const renderItem = (props) => {
-    const {theme,loading,navigation,route,item} = props;
+    const {theme,loading,navigation,route,item,imageUrl} = props;
 
-
+    const imagePath = '../../../public/images'+ imageUrl
     return (
         <TouchableWithoutFeedback onPress={()=>navigation.jumpTo('Detail',{title:item})}>
             <View style={style(theme).item}>
@@ -30,7 +30,7 @@ const renderItem = (props) => {
                     ]}
                 /> :
                     <>
-                        <Image style={{ width: width / 3, height: height / 9,marginBottom:20 }} source={require('../../../resources/images/barbbell_bench_press.jpg')} />
+                        <Image source={require('../../../public/images/barbbell_bench_press.jpg')} style={{ width: width / 3, height: height / 9,marginBottom:20 }} />
                         <View style={{ height: height / 18, width: width / 3 }}>
                             <Text numberOfLines={2} style={{ fontSize: 16, fontWeight: 'bold', width: width / 3, textAlign: 'center' }}>{item}</Text>
                         </View>

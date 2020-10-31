@@ -13,7 +13,7 @@ const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height; 
 
 const VerticalBottomListItem = props => {
-    const { theme, navigation, item, index, sublist  } = props; 
+    const { theme, navigation, item, index, sublist,addExToMyList  } = props; 
     const [toggle,setToggle] = useState(false);
     const [animatedVal,setAnimatedVal] = useState(new Animated.Value(0));
     const toggleButton = (onoff) =>{
@@ -47,7 +47,7 @@ const VerticalBottomListItem = props => {
                 <Animated.FlatList 
                 data={sublist} 
                 style={{height:animatedVal}} 
-                renderItem={(props)=><VerticalBottomSublistItem {...props}/>}
+                renderItem={(props)=><VerticalBottomSublistItem addExToMyList={addExToMyList} {...props}/>}
                 /> 
             
         </View>

@@ -5,7 +5,7 @@ import screenStyle from '../../utils/styles/screenContainer'
 import textStyle from '../../utils/styles/textStyle'
 import Header from '../components/ScreenHeader'
 import HorizontalList from '../components/horizontalList/HorizontalList'
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types' 
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -13,13 +13,14 @@ const height = Dimensions.get('screen').height;
 const Main = props => {
     const { theme,navigation,route } = props; 
     const [selectedPart,setSelectedPart] = useState(0);
+    
     return (
         <View style={screenStyle({ theme }).container}>
             <SafeAreaView /> 
             <Header title={'Main'} navigation={navigation} route={route}/>
             <View style={{marginVertical:40}}>
                 <View style={{width:'100%',justifyContent:'center',alignItems:'center'}}>
-                    <Image style={{width:width,height:height*0.38}} source={require('../../resources/images/body.png')}/>
+                    {/* <Image style={{width:width,height:height*0.38}} source={require('../../public/images/body.png')}/> */}
                 </View>
             </View>
             <HorizontalList route={route} selectedPart={selectedPart} navigation={navigation}/> 

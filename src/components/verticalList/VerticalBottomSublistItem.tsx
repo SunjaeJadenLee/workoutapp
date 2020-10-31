@@ -8,16 +8,18 @@ import {faBars,faCog} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome' 
 import PropTypes from 'prop-types'  
 import VerticalBottomListItem from './VerticalBottomCategory';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height; 
 
 const Main = props => {
-    const {theme,loading,navigation,route,item,index} = props;  
-    console.log(item)
+    const { theme, loading, navigation, route, item, index,addExToMyList } = props; 
     return (
-        <View style={style(theme).container}>
-            <Text style={style(theme).text}>{item}</Text>
-        </View>
+        <TouchableWithoutFeedback onPress={()=>addExToMyList(item)}>
+            <View style={style(theme).container}>
+                <Text style={style(theme).text}>{item}</Text>
+            </View>
+        </TouchableWithoutFeedback>
     )
 }
 
